@@ -1,0 +1,19 @@
+<label class="ve-flex-v-center mt-1">
+	<span class="no-wrap mr-2 w-140p no-shrink ve-text-right">{{name}}:</span>
+
+	<select class="w-100 mx-1 input-xs veapp__sel-row-inline form-control mr-1" name="{{formNameSelToken}}">
+		<option value="-1" {{#unless url}}selected{{/unless}}>Default</option>
+		{{#each availableTokens}}
+			<option value="{{ix}}">{{name}}</option>
+		{{/each}}
+		<option value="-2" {{#if url}}selected{{/if}}>Custom</option>
+	</select>
+</label>
+
+<div class="ve-flex-v-center mt-1 {{#unless url}}ve-hidden{{/unless}}" data-name="{{formNameStgTokenCustom}}">
+	<span class="no-wrap mr-2 w-140p no-shrink ve-text-right">Custom {{name}}:</span>
+
+	<input class="w-100 mx-1 input-xs form-control veapp__ipt-row-inline mr-2" name="{{formNameIptTokenCustom}}" type="text" value="{{url}}">
+
+	<button class="ve-btn ve-btn-5et ve-btn-xxs ve-btn-default w-initial" name="{{formNameBtnTokenCustom}}" title="Set Custom Token"><i class="fas fa-image mr-0"></i></button>
+</div>

@@ -1,0 +1,103 @@
+<div class="ve-flex-col h-100 ve-window min-h-0">
+	{{#if isMultipleCorpora}}
+		<label class="ve-flex-v-center">
+			<span class="mr-1 no-wrap">Select {{titleSearch}}:</span>
+			<select name="sel-corpus" class="form-control">
+				{{#each corpusHandlebarsMetas}}
+					<option value="{{@index}}" {{#unless @index}}selected{{/unless}}>{{name}}</option>
+				{{/each}}
+			</select>
+		</label>
+
+		<hr class="hr-2 hr--heavy">
+	{{/if}}
+
+	{{#each corpusHandlebarsMetas}}
+		<div class="ve-flex-col h-100 min-h-0 w-100 {{#if @index}}ve-hidden{{/if}}" data-name="wrp-corpus-{{@index}}">
+			<h3 class="mb-1 imp-advbk__header bold b-0">Importing: {{name}}</h3>
+
+			<div class="my-1">
+				Text will be imported to your <span class="clickable bold" onclick="ui.sidebar.activateTab('journal')">Journal Entries</span> tab.
+			</div>
+			<div class="my-1">
+				Each other entity will be added to the game using the importer appropriate for that entity, and the resulting document will be linked from the imported text.
+			</div>
+
+			<label class="w-100 split-v-center my-1">
+				<span class="mr-2"><b>Text</b></span>
+				<input type="checkbox" name="cb-journal-entries" checked>
+			</label>
+
+			<hr class="hr-1">
+
+			{{#if tagSections.length}}
+				<div class="my-1 split-v-center">
+					<div class="mr-5 ve-muted"><b><i>Attached Data</i></b></div>
+					<label class="ve-flex-h-right">
+						<input type="checkbox" data-type="god" checked title="Select All">
+					</label>
+				</div>
+			{{else}}
+				<div class="my-1"><i class="ve-muted">There is no attached data available for import.</i></div>
+			{{/if}}
+
+			<div class="ve-flex-col min-h-0 ve-overflow-y-auto">
+				{{#each tagSections}}
+					{{#if (ne @index 0)}}<hr class="hr-1 hr--dotted">{{/if}}
+
+					<div class="ve-flex-v-center 100 mt-1">
+						<label class="w-100 mr-2 imp-advbk__sect-header split-v-center">
+							<span class="mr-2 bold">{{displayName}}</span>
+							<input type="checkbox" data-tag="{{tag}}" data-type="all" checked title="Select All">
+						</label>
+						<div class="no-shrink">
+							<button class="ve-btn ve-btn-xs" title="Set folder path for {{toLowerCase displayName}} import" data-type="configure-tag" data-tag="{{tag}}">
+								<span class="fas fa-fw fa-sitemap"></span>
+							</button>
+						</div>
+					</div>
+
+					<div class="w-100 ve-flex-wrap">
+						{{#each sources}}
+							<label class="ve-flex-v-center my-1 mr-1 imp-advbk__wrp-cb-source">
+								<span class="mr-1 {{sourceClassName}}" title="{{sourceLong}}" {{#if sourceStyle}}style="{{sourceStyle}}"{{/if}}>{{sourceShort}}</span>
+								<input type="checkbox" class="mr-1" data-tag="{{../tag}}" data-source="{{source}}" checked>
+								<span class="ve-muted">({{count}})</span>
+							</label>
+						{{/each}}
+					</div>
+				{{/each}}
+
+				{{#each imageGroupSections}}
+					{{#if (or ../tagSections (ne @index 0))}}<hr class="hr-1 hr--dotted">{{/if}}
+
+					<div class="ve-flex-v-center 100 mt-1">
+						<label class="w-100 imp-advbk__sect-header split-v-center">
+							<span class="mr-2 bold">{{groupNamePlural}}</span>
+							<input type="checkbox" data-image-group="{{group}}" data-type="all" checked title="Select All">
+						</label>
+						<div class="no-shrink">
+							<button class="ve-btn ve-btn-xs" title="Set folder path for {{toLowerCase groupNamePlural}} import" data-type="configure-image">
+								<span class="fas fa-fw fa-sitemap"></span>
+							</button>
+						</div>
+					</div>
+
+					<div class="w-100 ve-flex-wrap">
+						{{#each imageTypeMetas}}
+							<label class="ve-flex-v-center my-1 mr-1 imp-advbk__wrp-cb-source">
+								<span class="mr-1">{{displayName}}</span>
+								<input type="checkbox" class="mr-1" data-image-group="{{../group}}" data-image-type="{{imageType}}" checked>
+								<span class="ve-muted">({{count}})</span>
+							</label>
+						{{/each}}
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	{{/each}}
+
+	<div class="no-shrink mt-auto">
+		<button class="ve-btn ve-btn-5et ve-btn-primary w-100" name="btn-run">Import</button>
+	</div>
+</div>

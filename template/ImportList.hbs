@@ -1,0 +1,40 @@
+<div class="ve-flex-col h-100 ve-window min-h-0">
+	<div class="ve-flex-v-stretch input-group input-group--top no-shrink">
+		<button class="ve-btn ve-btn-5et veapp__btn-filter" name="btn-filter">Filter</button>
+		<button class="ve-btn ve-btn-5et" title="Toggle Filter Summary Display" name="btn-toggle-summary"><span class="glyphicon glyphicon-resize-small"></span></button>
+		<div class="w-100 relative">
+			<input type="search" autocomplete="off" autocapitalize="off" spellcheck="false" class="h-100 search form-control lst__search lst__search--no-border-h" placeholder="Find {{titleSearch}}...">
+			<div class="lst__wrp-search-glass no-events ve-flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>
+			<div class="lst__wrp-search-visible no-events ve-flex-vh-center"></div>
+		</div>
+		<button class="ve-btn ve-btn-5et veapp__btn-list-feeling-lucky ve-flex-vh-center" name="btn-feeling-lucky" title="Feeling Lucky?"><span class="glyphicon glyphicon-random"></span></button>
+		<button class="ve-btn ve-btn-5et veapp__btn-list-reset" name="btn-reset">Reset</button>
+	</div>
+
+	<div class="fltr__mini-view ve-btn-group"></div>
+
+	<div class="ve-flex-v-stretch input-group input-group--bottom mb-1 no-shrink" data-name="wrp-btns-sort">
+		{{#if isRadio}}
+			<button class="ve-btn ve-btn-5et {{#if isPreviewable}}ve-col-0-4{{else}}ve-col-1{{/if}} px-1" disabled></button>
+		{{else}}
+			<label class="ve-btn ve-btn-5et {{#if isPreviewable}}ve-col-0-4{{else}}ve-col-1{{/if}} px-1 ve-flex-vh-center"><input type="checkbox" name="cb-select-all"></label>
+		{{/if}}
+
+		{{#if isPreviewable}}
+			<button class="ve-btn ve-btn-5et ve-col-0-6 px-1" name="btn-toggle-all-previews">[+]</button>
+		{{/if}}
+
+		{{#each cols}}
+			<button class="ve-btn ve-btn-5et ve-col-{{width}} px-1 sort" data-sort="{{field}}" {{#if title}}title="{{title}}"{{/if}}>{{name}}</button>
+		{{/each}}
+	</div>
+
+	<div class="veapp__list mb-1 h-100"></div>
+
+	<div class="no-shrink ve-flex-v-center">
+		<button class="ve-btn ve-btn-5et ve-btn-primary w-100" name="btn-run">{{titleButtonRun}}</button>
+		{{#each buttonsAdditional}}
+			<button class="ml-2 ve-btn ve-btn-5et ve-btn-default w-100" name="{{name}}">{{text}}</button>
+		{{/each}}
+	</div>
+</div>

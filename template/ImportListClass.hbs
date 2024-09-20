@@ -1,0 +1,31 @@
+<div class="ve-flex-col h-100 ve-window min-h-0">
+	<div class="ve-flex-v-stretch input-group input-group--top no-shrink">
+		<button class="ve-btn ve-btn-5et veapp__btn-filter" name="btn-filter">Filter</button>
+		<button class="ve-btn ve-btn-5et" title="Toggle Filter Summary Display" name="btn-toggle-summary"><span class="glyphicon glyphicon-resize-small"></span></button>
+		<div class="w-100 relative">
+			<input type="search" autocomplete="off" autocapitalize="off" spellcheck="false" class="h-100 search form-control lst__search lst__search--no-border-h" placeholder="Find {{titleSearch}}...">
+			<div class="lst__wrp-search-glass no-events ve-flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>
+			<div class="lst__wrp-search-visible no-events ve-flex-vh-center"></div>
+		</div>
+		<button class="ve-btn ve-btn-5et veapp__btn-list-feeling-lucky ve-flex-vh-center" name="btn-feeling-lucky" title="Feeling Lucky?"><span class="glyphicon glyphicon-random"></span></button>
+		<button class="ve-btn ve-btn-5et veapp__btn-list-reset" name="btn-reset">Reset</button>
+	</div>
+
+	<div class="fltr__mini-view ve-btn-group"></div>
+
+	<div class="ve-flex-v-stretch input-group input-group--bottom mb-1 no-shrink" data-name="wrp-btns-sort">
+		{{#if isRadio}}
+			<button class="ve-btn ve-btn-5et ve-col-1 ve-flex-vh-center" disabled></button>
+		{{else}}
+			<label class="ve-btn ve-btn-5et ve-col-1 ve-flex-vh-center"><input type="checkbox" name="cb-select-all"></label>
+		{{/if}}
+		<button class="ve-btn ve-btn-5et ve-col-9 sort name" data-sort="sortName">Name</button>
+		<button class="ve-btn ve-btn-5et ve-col-2" disabled>Source</button>
+	</div>
+
+	<div class="veapp__list mb-1 h-100"></div>
+
+	<div class="no-shrink">
+		<button class="ve-btn ve-btn-5et ve-btn-primary w-100" name="btn-run">Import</button>
+	</div>
+</div>

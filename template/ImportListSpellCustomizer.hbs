@@ -1,0 +1,60 @@
+<div class="ve-flex-col ve-window min-h-0 h-100">
+	<div class="ve-flex-v-stretch input-group input-group--top no-shrink">
+		<input type="search" class="search w-100 form-control h-initial" placeholder="Find {{titleSearch}}...">
+		<button class="ve-btn ve-btn-5et veapp__btn-list-reset" name="btn-reset">Reset</button>
+	</div>
+	<div class="ve-flex-v-stretch input-group input-group--bottom mb-1 no-shrink" data-name="wrp-btns-sort">
+		<button class="ve-btn ve-btn-5et ve-col-3 sort" data-sort="name">Name</button>
+		<button class="ve-btn ve-btn-5et ve-col-1-5 sort" data-sort="source">Source</button>
+		<button class="ve-btn ve-btn-5et ve-col-1 sort" data-sort="level">Level</button>
+
+		<label class="ve-btn ve-btn-5et ve-col-1-7 no-wrap ve-flex-v-center">
+			<span class="mr-1">Mode</span>
+
+			<select class="w-100 mx-1 input-xs veapp__sel-row-inline form-control" name="sel-mode-all">
+				{{#each modeOptions}}<option value="{{value}}">{{name}}</option>{{/each}}
+			</select>
+		</label>
+
+		<button class="ve-btn ve-btn-5et ve-col-2-4" disabled>Currently Prepared</button>
+		<button class="ve-btn ve-btn-5et ve-col-2-4" disabled>Preparation Mode</button>
+	</div>
+
+	<div class="veapp__list mb-1 h-100">
+		{{#each rows}}
+			<label class="w-100 ve-flex-v-center pb-1p veapp__list-row veapp__list-row-hoverable min-h-24p">
+				<span class="ve-col-3 pl-1">{{name}}</span>
+				<span class="ve-col-1-5 ve-text-center {{sourceClassName}}" title="{{sourceLong}}">{{sourceShort}}</span>
+				<span class="ve-col-1 ve-text-center">{{level}}</span>
+
+				<div class="ve-col-1-7 ve-flex-vh-center">
+					<select class="w-100 mx-1 input-xs veapp__sel-row-inline form-control" name="sel-mode">
+						{{#each ../modeOptions}}<option value="{{value}}">{{name}}</option>{{/each}}
+					</select>
+				</div>
+
+				<div class="ve-col-2-4 ve-flex-v-center">
+					<select class="w-100 mx-1 input-xs veapp__sel-row-inline form-control" name="sel-is-prepared">
+						<option value="-1" title="Use Config Default">&mdash;</option>
+						<option value="0">Not Prepared</option>
+						<option value="1">Currently Prepared</option>
+					</select>
+				</div>
+				<div class="ve-col-2-4 ve-flex-v-center">
+					<select class="w-100 mx-1 input-xs veapp__sel-row-inline form-control" name="sel-preparation-mode">
+						<option value="-1" title="Use Config Default">&mdash;</option>
+						<option value="always">Always Prepared</option>
+						<option value="atwill">At-Will</option>
+						<option value="innate">Innate Spellcasting</option>
+						<option value="pact">Pact Magic</option>
+						<option value="prepared">Prepared</option>
+					</select>
+				</div>
+			</label>
+		{{/each}}
+	</div>
+
+	<div class="no-shrink">
+		<button class="ve-btn ve-btn-5et ve-btn-primary w-100" name="btn-run">Import</button>
+	</div>
+</div>

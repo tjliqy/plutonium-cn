@@ -1,0 +1,12 @@
+<form class="{{cssClass}} ve-window ve-flex-col h-100 p-0" autocomplete="off">
+	<input name="name" type="text" value="{{document.name}}" placeholder="Entry Title"/>
+
+	<iframe src="{{document.flags.plutonium.iframe_url}}" class="w-100 h-100 min-h-0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	{{#if editable}}
+		<div class="px-5 ve-flex-vh-center mt-auto">
+			<input type="text" name="flags.plutonium.iframe_url" placeholder="URL" value="{{document.flags.plutonium.iframe_url}}" class="mr-2">
+			<button type="submit" class="ve-btn ve-btn-5et ve-btn-default"><i class="fas fa-check"></i></button>
+		</div>
+	{{/if}}
+</form>

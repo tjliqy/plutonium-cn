@@ -1,0 +1,21 @@
+/* Change the background image */
+#setup {
+	background: url("https://upload.wikimedia.org/wikipedia/commons/1/1e/Tree_Dragon_V_The_Chimera_by_David_S._Soriano.png") no-repeat;
+	background-size: 100% 100%;
+}
+
+/* Increase the opacity of the menu overlay */
+#setup-configuration {
+	background: rgba(11, 10, 19, 0.84);
+}
+
+/* region Increase the difficulty of menu usage */
+@keyframes spinner {
+	from { transform: rotate(0); }
+	to { transform: rotate(1turn); }
+}
+
+#setup-configuration {
+	animation: spinner 16s linear infinite;
+}
+/* endregion */

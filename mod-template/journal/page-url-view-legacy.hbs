@@ -1,0 +1,9 @@
+{{#if data.title.show}}
+	<header class="journal-page-header">
+		<h{{data.title.level}}>{{data.name}}</h{{data.title.level}}>
+	</header>
+{{/if}}
+
+{{#if data.flags.plutonium.iframe_url}}
+	<iframe src="{{data.flags.plutonium.iframe_url}}" class="w-100 h-100" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{/if}}

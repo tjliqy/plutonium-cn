@@ -1,0 +1,32 @@
+/* Hide the "World Description" header */
+#world-description h1:first-child {
+	display: none;
+}
+
+/* ------------- */
+
+/* Hide the "Game Details" section (Next Session/Current Players) */
+.left .app:nth-child(2) {
+	display: none;
+}
+
+/* ------------- */
+
+/* Hide the "Join Game Session" header */
+.left .app:first-child h1 {
+	display: none;
+}
+
+/* Create an alternate "Join Game Session" header with custom text */
+.left .app:first-child:before {
+	font-size: 24px;
+	display: block;
+	content: "Enter, If You Dare...";
+}
+
+/* ------------- */
+
+/* Hide the "Foundry Virtual Tabletop | Version ... " footer */
+.watermark {
+	display: none;
+}

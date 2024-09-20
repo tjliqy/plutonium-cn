@@ -1,0 +1,13 @@
+<form class="{{cssClass}} ve-flex-col" autocomplete="off">
+	{{> journalEntryPageHeader}}
+
+	<iframe src="{{document.flags.plutonium.iframe_url}}" class="w-100 h-100 min-h-0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	{{#if editable}}
+		<div class="px-5 mt-2 ve-flex-vh-center">
+			<input type="text" name="flags.plutonium.iframe_url" placeholder="URL" value="{{document.flags.plutonium.iframe_url}}">
+		</div>
+	{{/if}}
+
+	{{> journalEntryPageFooter}}
+</form>

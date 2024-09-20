@@ -1,0 +1,15 @@
+/* Hide the "News/"Featured Content" sidebar */
+#setup-sidebar {
+	display: none !important;
+}
+
+/* Change the background image */
+#main-background {
+	background: url("https://upload.wikimedia.org/wikipedia/commons/1/1e/Tree_Dragon_V_The_Chimera_by_David_S._Soriano.png") no-repeat;
+	background-size: 100% 100%;
+}
+
+/* Increase the opacity of the menu overlay */
+#setup-packages {
+	background: rgba(11, 10, 19, 0.7);
+}

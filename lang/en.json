@@ -1,0 +1,13 @@
+{
+	"CONTROLS.MeasureSelect": "Rectangular Select Templates",
+	"CONTROLS.LightSelect": "Rectangular Select Lights",
+	"CONTROLS.SoundSelect": "Rectangular Select Ambient Sounds",
+
+	"PLUT.Delete": "Delete",
+	"PLUT.Reset": "Reset",
+	"PLUT.Name": "Name",
+	"PLUT.Type": "Type",
+	"PLUT.Find items...": "Find items...",
+
+	"TYPES.JournalEntryPage.plutonium.url": "Embedded URL"
+}
